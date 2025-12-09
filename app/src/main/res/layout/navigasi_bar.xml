@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigationBar"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/bgBar"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:elevation="8dp"
+    android:paddingVertical="6dp"
+    android:paddingHorizontal="12dp">
+
+    <!-- Home -->
+    <LinearLayout
+        android:id="@+id/homePage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/round_home_24" />
+
+        <TextView
+            android:id="@+id/textHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:textSize="12sp"
+            android:textColor="@color/navy"
+            android:layout_marginTop="2dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- History -->
+    <LinearLayout
+        android:id="@+id/historyPage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconHistory"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/round_history_24"/>
+
+        <TextView
+            android:id="@+id/textHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="History"
+            android:textSize="12sp"
+            android:textColor="@color/navy"
+            android:layout_marginTop="2dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Profile -->
+    <LinearLayout
+        android:id="@+id/profilePage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconProfile"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/round_account_circle_24" />
+
+        <TextView
+            android:id="@+id/textProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="12sp"
+            android:textColor="@color/navy"
+            android:layout_marginTop="2dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>
