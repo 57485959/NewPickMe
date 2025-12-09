@@ -10,7 +10,10 @@
     <color name="soft_orange">#658CC5</color>
     <color name="light_grey">#E0E0E0</color>
     <color name="red">#ED713535</color>
+<<<<<<< HEAD
     <color name="hjo">#DC8BC34A</color>
+=======
+>>>>>>> 5a67356d904fb0f6b784bb20ed2ccd2b84af96db
 
 
 </resources>
