@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FF808080</color>
+    <color name="bgNotif">#F1F8F7</color>
+    <color name="bgBar">#FFFAFA</color>
+    <color name="bg">#FFFAFA</color>
+    <color name="navy">#07142E</color>
+    <color name="soft_orange">#658CC5</color>
+    <color name="light_grey">#E0E0E0</color>
+    <color name="red">#ED713535</color>
+
+
+</resources>

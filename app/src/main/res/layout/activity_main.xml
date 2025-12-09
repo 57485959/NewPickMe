@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvInfoNotif"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Hii, [Nama Pengguna]!"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="606dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMauKemana"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:text="Mau kemana hari ini?"
+            android:textSize="16sp"
+            android:textColor="@color/grey"
+            android:background="@drawable/bg_rounded"
+            android:padding="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="8dp"
+            android:textStyle="italic"
+            android:drawableStart="@drawable/ic_map_search" />
+
+        <!-- Ini  harusnya API Gmaps -->
+
+
+    </LinearLayout>
+
+    <!-- Navigasi bawah -->
+    <include layout="@layout/navigasi_bar" />
+
+</LinearLayout>

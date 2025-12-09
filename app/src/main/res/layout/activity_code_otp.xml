@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".LoginActivity"
+    android:background="@color/bg">
+
+    <!-- Back to Activity Register Page -->
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/round_arrow_back_24"/>
+
+    <!-- Judul Login -->
+    <TextView
+        android:id="@+id/txtOtpCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OTP Code"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtInfoOtpCode"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Enter the 4-digit OTP we;ve just sent to: "
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/txtOtpCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/otpCodeContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfoOtpCode">
+
+        <EditText
+            android:id="@+id/etOtpCode1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_rounded_input"
+            android:inputType="number"
+            android:hint="_"
+            android:paddingLeft="25dp"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/etOtpCode2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_rounded_input"
+            android:inputType="number"
+            android:hint="_"
+            android:paddingLeft="25dp"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/etOtpCode3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_rounded_input"
+            android:inputType="number"
+            android:hint="_"
+            android:paddingLeft="25dp"
+            android:layout_marginRight="10dp"/>
+
+        <EditText
+            android:id="@+id/etOtpCode4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_rounded_input"
+            android:inputType="number"
+            android:hint="_"
+            android:paddingLeft="25dp"
+            android:layout_marginRight="10dp"/>
+
+
+    </LinearLayout>
+
+    <!-- Resend OTP  -->
+    <TextView
+        android:id="@+id/txtResend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend OTP Code"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:textColor="@color/navy"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/otpCodeContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Tombol Reset -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegister"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_gradient_btn"
+        android:text="R E G I S T E R"
+        android:textAllCaps="true"
+        android:layout_marginTop="25dp"
+        android:textSize="14sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResend" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

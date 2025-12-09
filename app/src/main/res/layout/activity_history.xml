@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg">
+
+    <TextView
+        android:id="@+id/tvTitleHistory"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="History"
+        android:textStyle="bold"
+        android:textSize="23dp"
+        android:padding="8dp"
+        android:gravity="center"/>
+
+    <!-- Konten daftar -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"/>
+
+    <!-- Navigasi bawah -->
+    <include
+        layout="@layout/navigasi_bar" />
+</LinearLayout>
