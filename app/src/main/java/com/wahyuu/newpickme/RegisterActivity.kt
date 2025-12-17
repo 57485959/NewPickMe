@@ -23,6 +23,7 @@ class RegisterActivity : AppCompatActivity() {
         // 🔥 Init Firebase
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
+        var isPasswordVisible = false
 
         // Tombol daftar ditekan
         binding.btnNextRegister.setOnClickListener {
@@ -31,9 +32,7 @@ class RegisterActivity : AppCompatActivity() {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
-            // -------------------------------------
             // 🔍 VALIDASI INPUT
-            // -------------------------------------
             if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -54,9 +53,7 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // -------------------------------------
             // 🔍 CEK APAKAH NOMOR HP SUDAH DIGUNAKAN
-            // -------------------------------------
             firestore.collection("users")
                 .whereEqualTo("phone", phone)
                 .get()
@@ -74,6 +71,27 @@ class RegisterActivity : AppCompatActivity() {
                 }
         }
 
+        // Fungsi untuk melihar password
+        binding.ivTogglePassword.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+
+            if (isPasswordVisible) {
+                // 👁 Password terlihat
+                binding.etPassword.inputType =
+                    android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                binding.ivTogglePassword.setImageResource(R.drawable.ic_visibility)
+            } else {
+                // 🔒 Password disembunyikan (dot)
+                binding.etPassword.inputType =
+                    android.text.InputType.TYPE_CLASS_TEXT or android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                binding.ivTogglePassword.setImageResource(R.drawable.ic_visibility_off)
+            }
+
+            // Supaya cursor tetap di akhir teks
+            binding.etPassword.setSelection(binding.etPassword.text.length)
+        }
+
+
         // pindah ke login
         binding.tvLoginNow.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -81,9 +99,8 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    // -------------------------------------
+
     // 🔥 FUNGSI DAFTAR USER BARU
-    // -------------------------------------
     private fun registerUser(name: String, email: String, phone: String, password: String) {
 
         auth.createUserWithEmailAndPassword(email, password)
@@ -106,9 +123,7 @@ class RegisterActivity : AppCompatActivity() {
                     .addOnSuccessListener {
                         Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
 
-                        // -------------------------------------
                         // 🔥 LANJUT KE OTP SESUAI ALUR KAMU
-                        // -------------------------------------
                         val i = Intent(this, GetOtpCodeActivity::class.java)
                         i.putExtra("user_phone", phone)
                         startActivity(i)

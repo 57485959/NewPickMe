@@ -34,8 +34,6 @@ class LoginActivity : AppCompatActivity() {
 
         setupPasswordToggle()
 
-        val btnGoogle = findViewById<ImageView>(R.id.btnGoogleLogin)
-
         btnLogin.setOnClickListener {
             val phone = edtPhone.text.toString().trim()
             val password = edtPassword.text.toString().trim()

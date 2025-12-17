@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <meta-data
-        android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyCqyHcj1lsRty8AFQAC_Db8gOgP6U5e6sE"/>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wahyuu.newpickme">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
