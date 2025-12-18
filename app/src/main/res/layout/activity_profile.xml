@@ -131,87 +131,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- Orde history  -->
-            <LinearLayout
-                android:id="@+id/editOrderHistoryPackage"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/ivOrderHistory"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/outline_list_alt_24" />
-
-                <TextView
-                    android:id="@+id/tvOrderHistory"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="Order History"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/ivDetailOrderHistory"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="150dp"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/round_keyboard_arrow_right_24" />
-
-            </LinearLayout>
-
-            <!-- Privacy and poliicy -->
-            <LinearLayout
-                android:id="@+id/editPrivacyPolicyPackage"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/ivPrivacyPolicy"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/outline_privacy_tip_24" />
-
-                <TextView
-                    android:id="@+id/tvPrivacyPolicy"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="Privacy and policy "
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:id="@+id/ivDetailPrivacyPolicy"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginRight="5dp"
-                    app:srcCompat="@drawable/round_keyboard_arrow_right_24" />
-
-
-            </LinearLayout>
-
             <Button
                 android:id="@+id/btnLogOut"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/red"
                 android:text="Logout"
                 android:textSize="18sp"

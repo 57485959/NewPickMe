@@ -8,7 +8,6 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.Gson
 
 class ForgotPasswordActivity : AppCompatActivity() {
 
@@ -75,12 +74,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
             return
         }
 
-        val savedUser = Gson().fromJson(userJson, User::class.java)
-
-        if (email != savedUser.email) {
-            Toast.makeText(this, "Email tidak terdaftar", Toast.LENGTH_SHORT).show()
-            return
-        }
 
         savedUserEmail = email
         isEmailVerified = true
@@ -106,10 +99,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
         }
 
         val sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
-        val user = Gson().fromJson(sharedPref.getString("user", null), User::class.java)
-
-        val updatedUser = user.copy(password = newPassword)
-        sharedPref.edit().putString("user", Gson().toJson(updatedUser)).apply()
 
         Toast.makeText(this, "Password berhasil diubah!", Toast.LENGTH_SHORT).show()
 

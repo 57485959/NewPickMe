@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "589895874900",
+    "firebase_url": "https://prak8mobile-d53e5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "prak8mobile-d53e5",
+    "storage_bucket": "prak8mobile-d53e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589895874900:android:cbba1c50af275d2ca4b0c1",
+        "android_client_info": {
+          "package_name": "com.wahyu.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG3KAWp016G0i21-SjvFv2qLFudVSfhs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589895874900:android:be994a89f6b9f33ea4b0c1",
+        "android_client_info": {
+          "package_name": "com.wahyuu.newpickme"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG3KAWp016G0i21-SjvFv2qLFudVSfhs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589895874900:android:8177b736b7bf2563a4b0c1",
+        "android_client_info": {
+          "package_name": "com.wahyuu.newpost08"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG3KAWp016G0i21-SjvFv2qLFudVSfhs8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

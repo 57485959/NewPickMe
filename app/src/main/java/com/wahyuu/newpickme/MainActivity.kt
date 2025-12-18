@@ -4,11 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.gson.Gson
 import com.wahyuu.newpickme.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -34,13 +34,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val userJson = sharedPref.getString("user", null)
-        if (userJson != null) {
-            val user = Gson().fromJson(userJson, User::class.java)
-            binding.tvInfoNotif.text = "Hi, ${user.name}!"
-        }
-
-
         Log.d(TAG, "🔵 MainActivity: halaman HOME ditampilkan")
 
         // Menyesuaikan padding untuk status bar
@@ -56,6 +49,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.tvMauKemana.setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
+        }
+    }
+
+    private fun setInitLayout() {
+        binding.tvMauKemana.setOnClickListener { v: View? ->
+            val intent = Intent(this@MainActivity, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 }

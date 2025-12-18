@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.Gson
 import com.wahyuu.newpickme.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -19,11 +18,6 @@ class ProfileActivity : AppCompatActivity() {
         // Ambil data user dari SharedPreferences
         val sharedPref = getSharedPreferences("user_data", Context.MODE_PRIVATE)
         val userJson = sharedPref.getString("user", null)
-
-        if (userJson != null) {
-            val user = Gson().fromJson(userJson, User::class.java)
-            binding.tvProfileName.text = user.name
-        }
 
         // Setup Bottom Navigation
         val barNavigasi = BarNavigasi(this)

@@ -12,7 +12,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.gson.Gson
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,7 +31,16 @@ class LoginActivity : AppCompatActivity() {
         registerNow = findViewById(R.id.registerNow)
         tvForgotPassword = findViewById(R.id.forgotPassword)
 
-        setupPasswordToggle()
+//        setupPasswordToggle()
+
+        registerNow.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
+
+        tvForgotPassword.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
 
         btnLogin.setOnClickListener {
             val phone = edtPhone.text.toString().trim()
@@ -51,58 +59,31 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val savedUser = Gson().fromJson(userJson, User::class.java)
+        }
 
-            if (phone == savedUser.phone && password == savedUser.password) {
-                Toast.makeText(this, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+         fun setupPasswordToggle() {
+            val ivToggle = findViewById<ImageView>(R.id.passwordToggleIcon)
+            var isVisible = false
 
-                // Simpan status dan nama pengguna
-                sharedPref.edit().apply {
-                    putBoolean("isLoggedIn", true)
-                    putString("userName", savedUser.name)
-                    apply()
+            // default: password disembunyikan
+            edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            ivToggle.setImageResource(R.drawable.ic_visibility_off)
+
+            ivToggle.setOnClickListener {
+                isVisible = !isVisible
+
+                if (isVisible) {
+                    // Tampilkan password
+                    edtPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    ivToggle.setImageResource(R.drawable.ic_visibility)
+                } else {
+                    // Sembunyikan password
+                    edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                    ivToggle.setImageResource(R.drawable.ic_visibility_off)
                 }
 
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, "Nomor atau Password salah", Toast.LENGTH_SHORT).show()
+                edtPassword.setSelection(edtPassword.text.length)
             }
         }
-
-        tvForgotPassword.setOnClickListener {
-            val intent = Intent(this, ForgotPasswordActivity::class.java)
-            startActivity(intent)
-        }
-
-        registerNow.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
-        }
     }
-
-    private fun setupPasswordToggle() {
-        val ivToggle = findViewById<ImageView>(R.id.passwordToggleIcon)
-        var isVisible = false
-
-        // default: password disembunyikan
-        edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-        ivToggle.setImageResource(R.drawable.ic_visibility_off)
-
-        ivToggle.setOnClickListener {
-            isVisible = !isVisible
-
-            if (isVisible) {
-                // Tampilkan password
-                edtPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                ivToggle.setImageResource(R.drawable.ic_visibility)
-            } else {
-                // Sembunyikan password
-                edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-                ivToggle.setImageResource(R.drawable.ic_visibility_off)
-            }
-
-            edtPassword.setSelection(edtPassword.text.length)
-        }
-    }
-
 }
